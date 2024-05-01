@@ -3,6 +3,16 @@ from markupsafe import Markup
 import requests
 from newspaper import Article
 from anthropic import Anthropic
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+# Access the API keys using os.environ.get()
+anthropic_api_key = os.environ.get("ANTHROPIC_API_KEY")
+openai_api_key = os.environ.get("OPENAI_API_KEY")
+
+
 
 app = Flask(__name__)
 
