@@ -46,15 +46,18 @@ input[type=submit]:hover {
 }
 
 .debug-buttons input[type=submit] {
-    background-color: #2196F3;
+    background-color: #757575;  /* Gray color */
     color: white;
     padding: 10px 16px;
     font-size: 14px;
+    border: none; /* Removes the default border */
+    cursor: pointer; /* Changes cursor to pointer on hover */
 }
 
 .debug-buttons input[type=submit]:hover {
-    background-color: #0b7dda;
+    background-color: #616161; /* Darker gray on hover */
 }
+
 
 pre {
     background-color: #f2f2f2;
