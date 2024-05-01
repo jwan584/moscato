@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Insta Summary</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Insta Summary</h1>
+    <form method="post">
+        <label for="url">Enter a URL:</label><br>
+        <input type="text" id="url" name="url" placeholder="https://example.com"><br>
+        <input type="submit" name="summarize" value="Summarize">
+        <div class="debug-buttons">
+            <input type="submit" name="show_input" value="Review filtered input">
+            <input type="submit" name="show_raw" value="Review raw input">
+        </div>
+    </form>
+
+    {% if summary and request.form.get('summarize') %}
+    <h2>Summary:</h2>
+    <div class="summary-output">{{ summary|safe }}</div>
+    {% endif %}
+
+    {% if raw_input and request.form.get('show_input') %}
+    <h2>Raw Input:</h2>
+    <pre>{{ raw_input }}</pre>
+    {% endif %}
+
+    {% if raw_url and request.form.get('show_raw') %}
+    <h2>Raw URL Content:</h2>
+    <pre>{{ raw_url }}</pre>
+    {% endif %}
+</body>
+</html>
