@@ -12,12 +12,7 @@ load_dotenv()
 anthropic_api_key = os.environ.get("ANTHROPIC_API_KEY")
 openai_api_key = os.environ.get("OPENAI_API_KEY")
 
-
-
 app = Flask(__name__)
-
-# Replace with your Anthropic API key
-ANTHROPIC_API_KEY = "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"
 
 def fetch_url(url):
     headers = {
