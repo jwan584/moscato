@@ -8,7 +8,6 @@ import os
 
 load_dotenv()
 
-# Access the API keys using os.environ.get()
 anthropic_api_key = os.environ.get("ANTHROPIC_API_KEY")
 openai_api_key = os.environ.get("OPENAI_API_KEY")
 
@@ -59,7 +58,7 @@ def get_url_content(url):
 
 def generate_summary_llm(content):
     try:
-        anthropic = Anthropic(api_key=ANTHROPIC_API_KEY)
+        anthropic = Anthropic(api_key=anthropic_api_key)
         prompt = f"""\n\nHuman: You are a savvy writer known for giving engaging and illuminating
                 explainations. Give a user friendly summary this article explaining the key points
                 in bullets. The first bullet is a high level summary of article with context. Eg.
